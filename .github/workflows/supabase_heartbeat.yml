@@ -12,7 +12,7 @@ jobs:
     - name: Ping Supabase (read 1 row)
       run: |
         curl -sS \
-          "https://ikvhjgrrdfvvvnwvjaxg.supabase.co/rest/v1/kf_catalog?select=id&limit=1" \
+          "https://ikvhjgrrdfvvvnwvjaxg.supabase.co/rest/v1/kf_catalog?select=key&limit=1" \
           -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
           -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
 
