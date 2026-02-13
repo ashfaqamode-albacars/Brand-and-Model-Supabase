@@ -9,8 +9,11 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase
-        run: |
-          curl -s -X POST \
-            "https://ikvhjgrrdfvvvnwvjaxg.supabase.co/rest/v1/kf_catalog?select=id&limit=1" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}"
+    - name: Ping Supabase (read 1 row)
+      run: |
+        curl -sS \
+          "https://YOUR_PROJECT_REF.supabase.co/rest/v1/kf_catalog?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
+
+
